@@ -1,10 +1,9 @@
-package testcasetp3;
+package tp3;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import ar.edu.po2.tp3.*;
+import ar.edu.unq.po2.tp3.*;
 
 class CounterTestCase {
 	

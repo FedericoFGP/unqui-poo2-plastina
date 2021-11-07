@@ -1,10 +1,10 @@
-package testcasetp3;
-import ar.edu.po2.tp3.*;
+package tp3;
+import ar.edu.unq.po2.tp3.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import ar.edu.po2.tp3.Expression;
+import ar.edu.unq.po2.tp3.Expression;
 import junit.framework.Assert;
 
 /*

@@ -1,3 +1,5 @@
+package tp6;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -5,7 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tp6.PokerStatus;
 
-class testPoquerStatus {
+class testPokerStatus2 {
+
 	String dosDeCopas;
 	String dosDeDiamantes;
 	String dosDeTreboles;
@@ -23,15 +26,19 @@ class testPoquerStatus {
 		cincoDePicas = "5P";
 		sieteDePicas = "7P";
 		
-		status = new PokerStatus();
+
 		
 	}
 	
 	@Test
-	void test() {
-		assertFalse(status.verificar(dosDeCopas,dosDePicas, dosDeDiamantes, sieteDePicas ,cincoDePicas));
-		assertTrue(status.verificar(dosDeCopas,dosDePicas, dosDeDiamantes, sieteDePicas ,dosDeTreboles));
+	void testVerificarTrue() {
+		
+		//Exercise
+		status = new PokerStatus();
+		
+		//Verify
+		assertEquals("No hay",status.verificar(dosDeCopas,dosDePicas, dosDeDiamantes, sieteDePicas ,cincoDePicas));
+		assertEquals("Poker",status.verificar(dosDeCopas,dosDePicas, dosDeDiamantes, sieteDePicas ,dosDeTreboles));
 	}
-
 
 }

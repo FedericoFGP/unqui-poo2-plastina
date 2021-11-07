@@ -17,9 +17,9 @@ public class PokerStatus {
 	public PokerStatus() {
 	//	mano = new Mano();
 	}
-	public boolean verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
+	public String verificar(String carta1, String carta2, String carta3, String carta4, String carta5) {
 		ArrayList<String> cartas =  new ArrayList<String>(Arrays.asList(carta1,carta2,carta3,carta4,carta5));
-		return this.hayPoker(cartas);
+		return this.jugadaGanadora(cartas);
 	}
 	
 	public String obtenerPaloDe(String carta) {
@@ -44,6 +44,23 @@ public class PokerStatus {
 						.anyMatch(
 								e-> e >= 4
 		);
+	}
+	
+	public String jugadaGanadora(ArrayList<String> cartas) {
+		return this.hayPoker(cartas) ? "Poker" 
+				: this.hayTrio(cartas) ? "Trio" 
+				: this.hayColor(cartas) ? "Color" 
+				: "No hay" ;
+	}
+	
+	public boolean hayColor(ArrayList<String> cartas) {
+		return false;
+		
+	}
+	
+	public boolean hayTrio(ArrayList<String> cartas) {
+		return false;
+		
 	}
 	
 }
