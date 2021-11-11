@@ -1,15 +1,16 @@
 package tp6;
 
-import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import javax.management.RuntimeErrorException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.rules.ExpectedException;
 
+import ar.edu.unq.po2.tp6.Color;
 import ar.edu.unq.po2.tp6.Carta;
+import ar.edu.unq.po2.tp6.Palo;
+import ar.edu.unq.po2.tp6.Valor;
 
 class testCarta {
 	Carta dosDePicasNegras;
@@ -21,19 +22,17 @@ class testCarta {
 	Carta sieteDePicasRojas;
 	ExpectedException expectedEx;
 	
-	Carta cartaMock1;
-	
+
 	
 	
 	@BeforeEach
 	void setUp(){
-		dosDePicasNegras = new Carta("2", "P", Carta.Color.NEGRO);
-		cincoDeTrebolRojas = new Carta("5", "T", Carta.Color.ROJO);
-		dosDeDiamantesNegras = new Carta("2", "D", Carta.Color.NEGRO);
-		cincoDePicasRojas = new Carta("5","P", Carta.Color.ROJO);
+		dosDePicasNegras = new Carta(Valor.DOS, Palo.Pica, Color.NEGRO);
+		cincoDeTrebolRojas = new Carta(Valor.CINCO, Palo.Trebol, Color.ROJO);
+		dosDeDiamantesNegras = new Carta(Valor.DOS, Palo.Diamante,Color.NEGRO);
+		cincoDePicasRojas = new Carta(Valor.CINCO, Palo.Pica, Color.ROJO);
 		expectedEx = ExpectedException.none();
 		
-		cartaMock1 = mock(Carta.class);
 	}
 	
 	
@@ -45,17 +44,17 @@ class testCarta {
 	
 	@Test
 	void testGetPalo() {
-		assertEquals("P", cincoDePicasRojas.getPalo());
+		assertEquals(Palo.Pica, cincoDePicasRojas.getPalo());
 	}
 	
 	@Test
 	void testGetValor() {
-		assertEquals("5", cincoDePicasRojas.getValor());
+		assertEquals(5, cincoDePicasRojas.getValor());
 	}
 	
 	@Test
 	void testGetColor() {
-		assertEquals(Carta.Color.ROJO, cincoDePicasRojas.getColor());
+		assertEquals(Color.ROJO, cincoDePicasRojas.getColor());
 	}
 	
 	@Test
@@ -89,43 +88,43 @@ class testCarta {
 	}
 	
 	
-	@Test
-	void testSetearValorCorrecto() {
-		assertEquals(10, cincoDePicasRojas.setearValor("10"));
-		assertEquals(1, cincoDePicasRojas.setearValor("1"));
-	}
-	
-	@Test
-	void testSetearValorNumericoIncorrecto() {
-		// Exercise
-		Throwable exception = assertThrows(RuntimeException.class, () -> {
-				cincoDePicasRojas.setearValor("11");
-			}
-		);
-		
-		// Verify
-		assertEquals("El valor es numerico pero no corresponde a una carta de Poker.", exception.getMessage());
-	}
-	
-	@Test
-	void testSetearValorEspecialCorrecto() {
-		assertEquals(11, cincoDePicasRojas.setearValor("J"));
-	}
-	
-	@Test
-	void testSetearValorEspecialIncorrecto() {
-		// Exercise
-		Throwable exception = assertThrows(RuntimeException.class, () -> {
-				cincoDePicasRojas.setearValor("P");
-			}
-		);
-		
-		// Verify
-		assertEquals("El valor no es numerico ni coincide con alguna carta de Poker.", exception.getMessage());
-	}
-	
-	@Test
-	void testGetColorDescripcion() {
-		assertEquals(Carta.Color.ROJO.getDescripcion(), cincoDePicasRojas.getColor().getDescripcion());
-	}
+//	@Test
+//	void testSetearValorCorrecto() {
+//		assertEquals(10, cincoDePicasRojas.setearValor("10"));
+//		assertEquals(1, cincoDePicasRojas.setearValor("1"));
+//	}
+//	
+//	@Test
+//	void testSetearValorNumericoIncorrecto() {
+//		// Exercise
+//		Throwable exception = assertThrows(RuntimeException.class, () -> {
+//				cincoDePicasRojas.setearValor("11");
+//			}
+//		);
+//		
+//		// Verify
+//		assertEquals("El valor es numerico pero no corresponde a una carta de Poker.", exception.getMessage());
+//	}
+//	
+//	@Test
+//	void testSetearValorEspecialCorrecto() {
+//		assertEquals(11, cincoDePicasRojas.setearValor("J"));
+//	}
+//	
+//	@Test
+//	void testSetearValorEspecialIncorrecto() {
+//		// Exercise
+//		Throwable exception = assertThrows(RuntimeException.class, () -> {
+//				cincoDePicasRojas.setearValor("P");
+//			}
+//		);
+//		
+//		// Verify
+//		assertEquals("El valor no es numerico ni coincide con alguna carta de Poker.", exception.getMessage());
+//	}
+//	
+//	@Test
+//	void testGetColorDescripcion() {
+//		assertEquals(Carta.Color.ROJO.getDescripcion(), cincoDePicasRojas.getColor().getDescripcion());
+//	}
 }
