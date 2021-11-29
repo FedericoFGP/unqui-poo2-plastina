@@ -1,0 +1,52 @@
+1)En la intención del patrón se indica que el cliente debe poder tratar de manera
+  uniforme tanto a objetos individuales como compuestos. ¿ Cómo se logra esto con el patrón Composite?
+   
+   	El patrón de diseño Composite permite que un objeto compuesto se pueda tratar igual que lo objetos que
+   	lo componen ya que el compuesto tendŕa el mismo comportamiento que el componente. 
+   	Es decir, Dibujo siendo un Compuesto de Linea sabe responder el mensaje " dibujo.dibujar()"
+   	y "linea.dibujar()" puede responder el mensaje. Es el mismo mensaje pero con override.
+   	Se logra a través de una recursión entre los elementos del objeto Compuesto. 
+   	
+   	
+2)Explicar en qué casos se aplicarían este tipo de diseño.
+
+	Se puede aplicar en todos los casos en los cuales tengamos objetos que se componen de diferentes objetos
+	que tienen un mismo comportamiento y protocolo. 
+	Siempre que objeto1 "contieneA" objeto2 y objeto1 posea al menos un protocolo compartido con objeto2 se 
+	puede aplicar este tipo de diseños
+	
+3)Dentro de las consecuencias, se indica que los clientes deben mantenerse simples y no deben ser conscientes
+  si están interactuando con un objeto hoja o una composición. ¿Que elementos de la programación orientada a
+  objetos hace posible esto? 
+
+  	-Principalmente una abstracción de los tipos de objetos compuesto-componente a través de protocolos en común
+  	 Esta abstracción se consigue a través de las intefaces que permiten agrupar diferentes tipos de objetos
+  	 con un protocolo en común. Por lo que si un objeto compuesto implementa la misma intefaz de un componente 
+  	 se logrará tener este tipo de abstracción requerida. <<Concepto de polimorfismo aplicado a Composite>> 
+  
+Cultivos	  
+
+1) ¿Que impacto genera en su diseño el hecho de compartir instancias de parcelas entre composiciones?
+  Es decir, que la misma instancia se encuentre en más de una composición.
+  
+ 	El impacto que genera tener instancias dentro de una composición es que estaremos delegando constantemente
+ 	las tareas hasta que el ultimo objeto compuesto completa su ejecución. 
+ 	
+2) Describa las alternativas que puede utilizar para calcular la ganancia anual. Relacione las alternativas.
+		Por un lado se pueden sumar todas las ganancias de los cutivos puros
+		Por otro lado se pueden sumar todas las ganancias de los cultivos mixtos y sumar ambos resultados.
+		 Se puede tener un campo de cultivo general en donde tenga todos las parcelas y delegar la responsabilidad
+		 de sumar a cada uno de ellos.
+		Todas las alternativas conllevan en que cada uno de los objetos, ya sean hojas o compuestos deben tener la capacidad
+		de responder el mismo mensaje de forma polimórfica.
+
+3) Explique la discusión sobre quiénes deben implementar las operaciones de agregado y borrado de hijos. 
+
+
+4) Sobre su implementación, indique los roles que desempeñan cada una de las clases diseñadas en relación al patrón
+	 Composite.
+	 		Cliente será SistemaContableDeCampo
+	 		Hoja será CampoDeCultivoPuro   
+	 		Composite será CampoDeCultivoMixto
+	 		Ambos poseerán el protocolo de comportamiento ICapoDeCultivo
+	 		

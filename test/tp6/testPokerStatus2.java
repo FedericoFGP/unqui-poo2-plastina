@@ -61,11 +61,11 @@ class testPokerStatus2 {
 		
 		//Exercise
 		//status = new PokerStatus();
-		when(cartaMock1.getValor()).thenReturn(Valor.DOS.getValor());
-		when(cartaMock2.getValor()).thenReturn(Valor.DOS.getValor());
-		when(cartaMock3.getValor()).thenReturn(Valor.DOS.getValor());
-		when(cartaMock4.getValor()).thenReturn(Valor.DOS.getValor());
-		when(cartaMock5.getValor()).thenReturn(Valor.DOS.getValor());
+//		when(cartaMock1.getValor()).thenReturn(Valor.DOS.getValor());
+//		when(cartaMock2.getValor()).thenReturn(Valor.DOS.getValor());
+//		when(cartaMock3.getValor()).thenReturn(Valor.DOS.getValor());
+//		when(cartaMock4.getValor()).thenReturn(Valor.DOS.getValor());
+//		when(cartaMock5.getValor()).thenReturn(Valor.DOS.getValor());
 		//Verify
 		assertEquals(Jugada.Poker,status.verificar(manoTest1));
 		

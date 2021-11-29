@@ -1,0 +1,10 @@
+2.a)
+	Es el esqueletro del algoritmo de una operacion que se define en una clase abstracta
+2.b)
+	El esqueleto se debe mantener por lo que no se puede redifinir.
+2.c)
+	Se pueden redefinir las operaciones primitivas
+2.d)
+	Es un metodo que puede tener  o no  una implementacion predefinida. Las clases concretas lueden redefinirla o utilizar la implementacion de la super clase.
+
+
